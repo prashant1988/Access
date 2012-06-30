@@ -1,0 +1,56 @@
+
+<h1>Listing</h1>
+         <div align="right">
+           <%= form_tag :controller=>'host',:action=>'search',:method=>:get do |src|%>
+           <%= text_field_tag "email" %>
+           <%= submit_tag "search" %>
+               <% end %>
+           </div>
+
+<br/><br/>
+<table align="center" border="1" bgcolor="#fff8dc">
+  <tr>
+    <th>User_type</th>
+    <th>Client_name</th>
+    <th>Place</th>
+    <th>Email</th>
+    <th>Access_url</th>
+    <th>Ftp-host</th>
+    <th>Ftp_user</th>
+    <th>Size</th>
+    <th>Db_host</th>
+    <th>Db_name</th>
+    <th>Db_user</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @hosts.each do  |acs| %>
+      <tr>
+        <td><%=acs.user_type  %> </td>
+        <td><%=acs.client  %> </td>
+        <td><%=acs.place  %> </td>
+        <td><%=acs.email  %> </td>
+        <td><%=acs.access_url  %> </td>
+        <td><%=acs.ftp_host %> </td>
+        <td><%=acs.ftp_user  %> </td>
+        <td><%=acs.ftp_quote  %> </td>
+        <td><%=acs.db_host %> </td>
+        <td><%=acs.db_name  %> </td>
+        <td><%=acs.db_user  %> </td>
+        <td><%=link_to 'show',acs  %> </td>
+        <td><%=link_to 'edit',edit_host_path(acs)  %> </td>
+        <td><%=link_to 'destroy',acs,:data=> {:confirm=>"Are you sure?"},method: :delete %> </td>
+  <%end  %>
+</table>
+<br/>
+
+<%= link_to 'new',new_host_path %>
+<br/>
+<%=link_to 'Download Excel', url_for(:format =>'xls')%>
+<br/>
+<%= link_to "Backup DB", backup_host_index_path%>
+<br/>
+<%= link_to "Restore DB", restore_host_index_path%>
+<br/>  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h4 align="right"> <%= will_paginate @hosts%></h4>

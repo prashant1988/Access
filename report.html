@@ -1,0 +1,622 @@
+<!DOCTYPE HTML SYSTEM>
+<html>
+<head>
+<title>Brakeman Report</title>
+  <script>
+    function toggle(context) {
+      var elem = document.getElementById(context);
+
+      if (elem.style.display != "block")
+        elem.style.display = "block";
+      else
+        elem.style.display = "none";
+        
+      elem.parentNode.scrollIntoView();
+    }
+  </script>
+  <style>
+    /* CSS style used for HTML reports */
+
+body {
+  font-family: sans-serif;
+  color: #161616;
+}
+
+p {
+  font-weight: bold;
+  font-size: 11pt;
+  color: #2D0200;
+ }
+
+ th {
+   background-color: #980905;
+   border-bottom: 5px solid #530200;
+   color: white;
+   font-size: 11pt;
+   padding: 1px 8px 1px 8px;
+ }
+
+ td {
+   border-bottom: 2px solid white;
+   font-family: monospace;
+   padding: 5px 8px 1px 8px;
+ }
+
+ table {
+   background-color: #FCF4D4;
+   border-collapse: collapse;
+ }
+
+ h1 {
+   color: #2D0200;
+   font-size: 14pt;
+ }
+
+ h2 {
+   color: #2D0200;
+   font-size: 12pt;
+ }
+
+ span.high-confidence {
+   font-weight:bold;
+   color: red;
+ }
+
+ span.med-confidence {
+ }
+
+ span.weak-confidence {
+   color:gray;
+ }
+
+ div.warning_message {
+   cursor: pointer;
+ }
+
+ div.warning_message:hover {
+   background-color: white;
+ }
+
+ table caption {
+   background-color: #FFE;
+   padding: 2px;
+ }
+
+ table.context {
+   margin-top: 5px;
+   margin-bottom: 5px;
+   border-left: 1px solid #90e960;
+   color: #212121;
+ }
+
+ tr.context {
+   background-color: white;
+ }
+
+ tr.first {
+   border-top: 1px solid #7ecc54;
+   padding-top: 2px;
+ }
+
+ tr.error {
+  background-color: #f4c1c1 !important
+ }
+
+ tr.near_error {
+  background-color: #f4d4d4 !important
+ }
+
+ tr.alt {
+   background-color: #e8f4d4;
+ }
+
+ td.context {
+   padding: 2px 10px 0px 6px;
+   border-bottom: none;
+ }
+
+ td.context_line {
+   padding: 2px 8px 0px 7px;
+   border-right: 1px solid #b3bda4;
+   border-bottom: none;
+   color: #6e7465;
+ }
+
+ pre.context {
+   margin-bottom: 1px;
+ }
+
+ .user_input {
+   background-color: #fcecab;
+ }
+
+  </style>
+</head>
+<body>
+
+<h1>Brakeman Report</h1>
+<table>
+  <tr>
+    <th>Application Path</th>
+    <th>Rails Version</th>
+    <th>Report Generation Time</th>
+    <th>Checks Performed</th>
+  </tr>
+  <tr>
+    <td>/home/prashant/rails/projects/space_access</td>
+    <td>3.2.6</td>
+    <td>2012-06-30 11:53:29 +0530</td>
+    <td>BasicAuth, CrossSiteScripting, DefaultRoutes, EscapeFunction, Evaluation, Execute, FileAccess, FilterSkipping, ForgerySetting, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttributes, NestedAttributes, QuoteTableName, Redirect, Render, ResponseSplitting, SQL, SafeBufferManipulation, SelectVulnerability, Send, SendFile, SessionSettings, SkipBeforeFilter, StripTags, TranslateBug, ValidationRegex, WithoutProtection</td>
+  </tr>
+</table>
+<br>
+<h2 id='summary'>Summary</h2> 
+<table>
+  <tr>
+    <th>Scanned/Reported</th>
+    <th>Total</th>
+  </tr>
+  <tr>
+    <td>Controllers</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Models</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Templates</td>
+    <td>18</td>
+  </tr>
+  <tr>
+    <td>Errors</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Security Warnings</td>
+    <td>5 <span class='high-confidence'>(5)</span></td>
+  </tr>
+</table>
+<br>
+<table>
+  <tr>
+    <th>Warning Type</th>
+    <th>Total</th>
+  </tr>
+  
+  <tr>
+    <td>File Access</td>
+    <td>5</td>
+  </tr>
+  
+</table>
+<br>
+<h2>Security Warnings</h2>  
+<table>
+
+  <tr>
+    <th>Confidence</th>
+    <th>Class</th>
+    <th>Method</th>
+    <th>Warning Type</th>
+    <th>Message</th>
+  </tr>
+  
+  <tr>
+    <td><span class='high-confidence'>High</span></td>
+    <td>HostController</td>
+    <td>backup</td>
+    <td>File Access</td>
+    <td><div class='warning_message' onClick="toggle('context1');toggle('message1');toggle('full_message1')" >User input value used in file name near line 75: FileUtils.rm_r(<span class="user_input">Host.back_up.path</span>)<table id='context1' class='context' style='display:none'><caption>/app/controllers/host_controller.rb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>70</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>    puts file_path.inspect</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>71</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    send_file file_path,</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>72</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>              :filename =&gt; File.basename(file_path),</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>73</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>              :type =&gt; File.ftype(file_path),</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>74</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>              :disposition =&gt; 'attachment'</pre>
+            </td>
+          </tr>
+          <tr class='context alt error'>
+            <td class='context_line'>
+              <pre class='context'>75</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    FileUtils.rm_r(file_path.path)</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>76</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  end</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>78</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'> def download</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>79</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>   dwnl=Host.find(params[:id])</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+  
+  <tr>
+    <td><span class='high-confidence'>High</span></td>
+    <td>HostController</td>
+    <td>restore_backup</td>
+    <td>File Access</td>
+    <td><div class='warning_message' onClick="toggle('context2');toggle('message2');toggle('full_message2')" ><span id='message2' style='display:block' >Parameter value used in file name near line 91: FileUtils.cp(<span class="user_input">params[:file].tempfile.path</span>, File.join(&quot;...</span><span id='full_message2' style='display:none'>Parameter value used in file name near line 91: FileUtils.cp(<span class="user_input">params[:file].tempfile.path</span>, File.join(&quot;#{::Rails.root.to_s}/public/uploaded_files/&quot;, params[:file].original_filename))</span><table id='context2' class='context' style='display:none'><caption>/app/controllers/host_controller.rb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>86</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'> end</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>88</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  def restore_backup</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>89</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    tmp=params[:file].tempfile</pre>
+            </td>
+          </tr>
+          <tr class='context alt near_error'>
+            <td class='context_line'>
+              <pre class='context'>90</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    file=File.join(&quot;#{::Rails.root.to_s}/public/uploaded_files/&quot;,params[:file].original_filename)</pre>
+            </td>
+          </tr>
+          <tr class='context error'>
+            <td class='context_line'>
+              <pre class='context'>91</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    FileUtils.cp tmp.path, file</pre>
+            </td>
+          </tr>
+          <tr class='context alt near_error'>
+            <td class='context_line'>
+              <pre class='context'>92</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    Host.restore_db file</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>93</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    FileUtils.remove_file(file, force=true)</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>94</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    redirect_to :action=&gt;'index'</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>95</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  end</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+  
+  <tr>
+    <td><span class='high-confidence'>High</span></td>
+    <td>HostController</td>
+    <td>restore_backup</td>
+    <td>File Access</td>
+    <td><div class='warning_message' onClick="toggle('context3');toggle('message3');toggle('full_message3')" ><span id='message3' style='display:block' >Parameter value used in file name near line 93: FileUtils.remove_file(File.join(&quot;#{::Rails.root.to_s}...</span><span id='full_message3' style='display:none'>Parameter value used in file name near line 93: FileUtils.remove_file(File.join(&quot;#{::Rails.root.to_s}/public/uploaded_files/&quot;, <span class="user_input">params[:file].original_filename</span>), (force = true))</span><table id='context3' class='context' style='display:none'><caption>/app/controllers/host_controller.rb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>88</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>  def restore_backup</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>89</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    tmp=params[:file].tempfile</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>90</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    file=File.join(&quot;#{::Rails.root.to_s}/public/uploaded_files/&quot;,params[:file].original_filename)</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>91</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    FileUtils.cp tmp.path, file</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>92</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    Host.restore_db file</pre>
+            </td>
+          </tr>
+          <tr class='context alt error'>
+            <td class='context_line'>
+              <pre class='context'>93</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    FileUtils.remove_file(file, force=true)</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>94</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    redirect_to :action=&gt;'index'</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>95</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  end</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>97</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  def destroy</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>98</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    @host=Host.find(params[:id])</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+  
+  <tr>
+    <td><span class='high-confidence'>High</span></td>
+    <td>HostController</td>
+    <td>backup</td>
+    <td>File Access</td>
+    <td><div class='warning_message' onClick="toggle('context4');toggle('message4');toggle('full_message4')" ><span id='message4' style='display:block' >User input value used in file name near line 71: send_file(<span class="user_input">Host.back_up</span>, :filename =&gt; (File.basename(...</span><span id='full_message4' style='display:none'>User input value used in file name near line 71: send_file(<span class="user_input">Host.back_up</span>, :filename =&gt; (File.basename(<span class="user_input">Host.back_up</span>)), :type =&gt; (File.ftype(<span class="user_input">Host.back_up</span>)), :disposition =&gt; &quot;attachment&quot;)</span><table id='context4' class='context' style='display:none'><caption>/app/controllers/host_controller.rb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>66</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>  end</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>68</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  def backup</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>69</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    file_path=Host.back_up</pre>
+            </td>
+          </tr>
+          <tr class='context alt near_error'>
+            <td class='context_line'>
+              <pre class='context'>70</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    puts file_path.inspect</pre>
+            </td>
+          </tr>
+          <tr class='context error'>
+            <td class='context_line'>
+              <pre class='context'>71</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    send_file file_path,</pre>
+            </td>
+          </tr>
+          <tr class='context alt near_error'>
+            <td class='context_line'>
+              <pre class='context'>72</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>              :filename =&gt; File.basename(file_path),</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>73</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>              :type =&gt; File.ftype(file_path),</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>74</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>              :disposition =&gt; 'attachment'</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>75</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    FileUtils.rm_r(file_path.path)</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>76</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  end</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+  
+  <tr>
+    <td><span class='high-confidence'>High</span></td>
+    <td>HostController</td>
+    <td>download</td>
+    <td>File Access</td>
+    <td><div class='warning_message' onClick="toggle('context5');toggle('message5');toggle('full_message5')" ><span id='message5' style='display:block' >User input value used in file name near line 81: send_file(<span class="user_input">Host.find(params[:id])</span>.pdf.path, :filename...</span><span id='full_message5' style='display:none'>User input value used in file name near line 81: send_file(<span class="user_input">Host.find(params[:id])</span>.pdf.path, :filename =&gt; (<span class="user_input">Host.find(params[:id])</span>.pdf_file_name), :type =&gt; (<span class="user_input">Host.find(params[:id])</span>.pdf_content_type), :disposition =&gt; &quot;attachment&quot;)</span><table id='context5' class='context' style='display:none'><caption>/app/controllers/host_controller.rb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>76</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>  end</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>78</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'> def download</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>79</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>   dwnl=Host.find(params[:id])</pre>
+            </td>
+          </tr>
+          <tr class='context alt error'>
+            <td class='context_line'>
+              <pre class='context'>81</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>   send_file dwnl.pdf.path,</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>82</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>         :filename=&gt;dwnl.pdf_file_name,</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>83</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>         :type=&gt;dwnl.pdf_content_type,</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>84</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>         :disposition=&gt;'attachment'</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>85</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'> flash[:notice]='your file has been downloaded'</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>86</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'> end</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+  
+
+</table></body></html>

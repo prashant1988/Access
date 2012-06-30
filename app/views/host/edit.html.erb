@@ -1,0 +1,8 @@
+<h1>Edit</h1>
+
+<center>
+  <%= form_for @host,:url=>{:action=>'update'} do |acs| %>
+      <%= render(:partial=>'form',:locals=>{:acs=>acs})%>
+      <%= acs.submit "update" %>
+  <%end %>
+</center>

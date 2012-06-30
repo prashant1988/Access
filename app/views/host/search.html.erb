@@ -1,0 +1,37 @@
+<h1>search_result</h1>
+
+<% if (@host.length==0)%>
+          <p><h3>There is no related data please enter in correct order</h3></p>
+  <%else%>
+    <table align="center" border="1" bgcolor="#fffacd">
+      <tr>
+        <th>User_type</th>
+        <th>Client_name</th>
+        <th>Place</th>
+        <th>Email</th>
+        <th>Access_url</th>
+        <th>Ftp-host</th>
+        <th>Ftp_user</th>
+        <th>Size</th>
+        <th>Db_name</th>
+        <th>Db_user</th>
+      </tr>
+      <% @host.each do  |acs| %>
+          <tr>
+            <td><%=acs.user_type  %> </td>
+            <td><%=acs.client  %> </td>
+            <td><%=acs.place  %> </td>
+            <td><%=acs.email  %> </td>
+            <td><%=acs.access_url  %> </td>
+            <td><%=acs.ftp_host %> </td>
+            <td><%=acs.ftp_user  %> </td>
+            <td><%=acs.db_host %> </td>
+            <td><%=acs.db_name  %> </td>
+            <td><%=acs.db_user  %> </td>
+       <%end  %>
+    </table>
+
+<%end%>
+
+
+<%= link_to 'back', host_index_path%>

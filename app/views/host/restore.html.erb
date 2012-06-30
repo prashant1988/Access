@@ -1,0 +1,15 @@
+                       <br/><br/><br/><br/><br/>
+<%= form_tag 'restore_backup', :method=>:post, :multipart=>true do |f| %>
+<table align="center">
+        <tr>
+         <th> Select file to restore</th>
+         <td><%=file_field_tag "file"%></td>
+        </tr>
+        <tr>
+            <br/><td><%= submit_tag 'Restore'%></td>
+        </tr>
+</table>
+
+<%end%>
+
+<%= link_to 'Back',host_index_path%>

@@ -1,0 +1,54 @@
+<h1>show</h1>
+
+<center>
+
+  <b>Created_on:</b>
+  <%=@host.created_on %>
+  <br/>
+
+  <b>Expire_on</b>
+  <%=@host.expire_on %>  <br/>
+  <br/>
+
+  <b>User_type:</b>
+  <%=@host.user_type%>
+  <br/>
+  <b>Name_of_client:</b>
+  <%=@host.client%>         <br/>
+
+  <br/>
+  <b>Place:</b>
+  <%=@host.place%>           <br/>
+  <b>Email:</b>
+  <%=@host.email%>         <br/>
+  <br/>
+
+  <b>Access_user:</b>
+  <%=@host.access_url%>     <br/>
+  <b>Ftp_host:</b>
+  <%=@host.ftp_host%>        <br/>
+  <br/>
+
+  <b>Ftp_user:</b>
+  <%=@host.ftp_user%>         <br/>
+  <b>Ftp_password:</b>
+  <%=@host.ftp_password%>     <br/>
+  <br/>
+  <b>Ftp_quote[MB]:</b>
+  <%= @host.ftp_quote%>        <br/>
+  <b>Db_host:</b>
+  <%=@host.db_host%>            <br/>
+  <b>Db_name:</b>
+  <%=@host.db_name%>          <br/>
+  <br/>
+
+  <b>Db_password:</b>
+  <%=@host.db_password%>         <br/>
+  <b>Db_User:</b>
+  <%=@host.db_user%>            <br/>
+  <br/>
+  <b>Pdf:</b>
+  <%=link_to @host.pdf_file_name ,download_host_index_path(:id=>@host.id) %>
+
+
+</center>

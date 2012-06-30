@@ -1,0 +1,10 @@
+<h1>new</h1>
+
+<center>
+  <%= form_for :host,:url=>{:action=>'create'},:html=>{:multipart=>'true'}  do |acs| %>
+
+      <%= render(:partial=>'form',:locals=>{:acs=>acs})%>
+      <%# form-buttons %>
+      <%= acs.submit "create_record"%>
+   <%end%>
+</center>

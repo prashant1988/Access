@@ -1,0 +1,82 @@
+<%  if @host.errors.any? %>
+    <h2><%= pluralize(@host.errors.count,"error")%>prohibited  errors from being saved</h2>
+   <ul>
+     <% @host.errors.full_messages.each do |msg| %>
+              <li><%=msg %> </li>
+     <%end%>   </ul>
+<%end%>
+
+  <table align="center"  >
+
+    <tr>
+            <th>Created_on</th>
+            <td><%=acs.date_select:created_on, :start_year => 2000 %> </td>
+            <th>Expire_on</th>
+            <td><%=acs.date_select :expire_on %></td>
+    </tr>
+
+
+
+    <tr>
+            <th>User_type</th>
+            <td><%=acs.text_field:user_type%></td>
+            <th>Name_of_client</th>
+            <td><%=acs.text_field:client%></td>
+    </tr>
+
+
+    <tr>
+            <th>Place</th>
+            <td><%=acs.text_field:place%></td>
+            <th>Email</th>
+            <td><%=acs.text_field:email%></td>
+    </tr>
+
+
+    <tr>
+            <th>Access_user</th>
+            <td><%=acs.text_field:access_url%>
+            <th>Ftp_host</th>
+            <td><%=acs.select(:ftp_host,['ftp.space_access.com'] )%><%=acs.label('','@web_space.com')%> </td>
+
+    </tr>
+
+
+    <tr> <th>Ftp_password</th>
+            <td><%=acs.text_field:ftp_password%><%= button_tag "generate",:type=>'button',:onclick=>"pswd()"%></td>
+            <th>Ftp_user</th>
+            <td><%=acs.text_field:ftp_user%></td>
+
+    </tr>
+
+
+    <tr>
+           <th>Ftp_quote[MB]</th>
+           <td><%= acs.text_field:ftp_quote%></td>
+           <th>Db_host</th>
+           <td><%=acs.text_field:db_host%></td>
+
+    </tr>
+
+
+    <tr>   <th>Db_name</th>
+           <td><%=acs.text_field:db_name%></td>
+           <th>Db_User</th>
+           <td><%=acs.text_field:db_user%></td>
+
+    </tr>
+
+
+    <tr>   <th>Db_password</th>
+           <td><%=acs.text_field:db_password%>
+           <%= button_tag "Generate", :type=>'button',:onclick=>"pswd1()"%></td>
+
+           <th>Pdf:</th>
+           <td><%= acs.file_field:pdf%></td>
+     </tr>
+
+
+</table>
+<br/>
+<%#= acs.submit  "create"%>
+
