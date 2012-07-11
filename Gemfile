@@ -11,6 +11,7 @@ gem 'rspec-rails'
 gem 'devise'
 gem 'simplecov'
 gem 'brakeman'
+gem 'css3-progress-bar-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

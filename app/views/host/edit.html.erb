@@ -1,8 +1,10 @@
-<h1>Edit</h1>
-
+<h1>You can Edit you information here</h1>
+  <br/>
 <center>
   <%= form_for @host,:url=>{:action=>'update'} do |acs| %>
       <%= render(:partial=>'form',:locals=>{:acs=>acs})%>
       <%= acs.submit "update" %>
   <%end %>
 </center>
+<%=link_to 'Index', host_index_path%>
+<br/><br/><br/><br/><br/><br/>

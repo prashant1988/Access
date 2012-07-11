@@ -145,7 +145,7 @@ p {
   <tr>
     <td>/home/prashant/rails/projects/space_access</td>
     <td>3.2.6</td>
-    <td>2012-06-30 11:53:29 +0530</td>
+    <td>2012-06-30 16:49:08 +0530</td>
     <td>BasicAuth, CrossSiteScripting, DefaultRoutes, EscapeFunction, Evaluation, Execute, FileAccess, FilterSkipping, ForgerySetting, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttributes, NestedAttributes, QuoteTableName, Redirect, Render, ResponseSplitting, SQL, SafeBufferManipulation, SelectVulnerability, Send, SendFile, SessionSettings, SkipBeforeFilter, StripTags, TranslateBug, ValidationRegex, WithoutProtection</td>
   </tr>
 </table>
@@ -287,9 +287,9 @@ p {
     <td>HostController</td>
     <td>restore_backup</td>
     <td>File Access</td>
-    <td><div class='warning_message' onClick="toggle('context2');toggle('message2');toggle('full_message2')" ><span id='message2' style='display:block' >Parameter value used in file name near line 91: FileUtils.cp(<span class="user_input">params[:file].tempfile.path</span>, File.join(&quot;...</span><span id='full_message2' style='display:none'>Parameter value used in file name near line 91: FileUtils.cp(<span class="user_input">params[:file].tempfile.path</span>, File.join(&quot;#{::Rails.root.to_s}/public/uploaded_files/&quot;, params[:file].original_filename))</span><table id='context2' class='context' style='display:none'><caption>/app/controllers/host_controller.rb</caption>        <tr class='context first'>
+    <td><div class='warning_message' onClick="toggle('context2');toggle('message2');toggle('full_message2')" ><span id='message2' style='display:block' >Parameter value used in file name near line 92: FileUtils.cp(<span class="user_input">params[:file].tempfile.path</span>, File.join(&quot;...</span><span id='full_message2' style='display:none'>Parameter value used in file name near line 92: FileUtils.cp(<span class="user_input">params[:file].tempfile.path</span>, File.join(&quot;#{::Rails.root.to_s}/public/uploaded_files/&quot;, params[:file].original_filename))</span><table id='context2' class='context' style='display:none'><caption>/app/controllers/host_controller.rb</caption>        <tr class='context first'>
           <td class='context_line'>
-            <pre class='context'>86</pre>
+            <pre class='context'>87</pre>
           </td>
           <td class='context'>
             <pre class='context'> end</pre>
@@ -297,7 +297,7 @@ p {
         </tr>
           <tr class='context alt'>
             <td class='context_line'>
-              <pre class='context'>88</pre>
+              <pre class='context'>89</pre>
             </td>
             <td class='context'>
               <pre class='context'>  def restore_backup</pre>
@@ -305,7 +305,7 @@ p {
           </tr>
           <tr class='context'>
             <td class='context_line'>
-              <pre class='context'>89</pre>
+              <pre class='context'>90</pre>
             </td>
             <td class='context'>
               <pre class='context'>    tmp=params[:file].tempfile</pre>
@@ -313,7 +313,7 @@ p {
           </tr>
           <tr class='context alt near_error'>
             <td class='context_line'>
-              <pre class='context'>90</pre>
+              <pre class='context'>91</pre>
             </td>
             <td class='context'>
               <pre class='context'>    file=File.join(&quot;#{::Rails.root.to_s}/public/uploaded_files/&quot;,params[:file].original_filename)</pre>
@@ -321,7 +321,7 @@ p {
           </tr>
           <tr class='context error'>
             <td class='context_line'>
-              <pre class='context'>91</pre>
+              <pre class='context'>92</pre>
             </td>
             <td class='context'>
               <pre class='context'>    FileUtils.cp tmp.path, file</pre>
@@ -329,7 +329,7 @@ p {
           </tr>
           <tr class='context alt near_error'>
             <td class='context_line'>
-              <pre class='context'>92</pre>
+              <pre class='context'>93</pre>
             </td>
             <td class='context'>
               <pre class='context'>    Host.restore_db file</pre>
@@ -337,7 +337,7 @@ p {
           </tr>
           <tr class='context'>
             <td class='context_line'>
-              <pre class='context'>93</pre>
+              <pre class='context'>94</pre>
             </td>
             <td class='context'>
               <pre class='context'>    FileUtils.remove_file(file, force=true)</pre>
@@ -345,7 +345,7 @@ p {
           </tr>
           <tr class='context alt'>
             <td class='context_line'>
-              <pre class='context'>94</pre>
+              <pre class='context'>95</pre>
             </td>
             <td class='context'>
               <pre class='context'>    redirect_to :action=&gt;'index'</pre>
@@ -353,7 +353,7 @@ p {
           </tr>
           <tr class='context'>
             <td class='context_line'>
-              <pre class='context'>95</pre>
+              <pre class='context'>96</pre>
             </td>
             <td class='context'>
               <pre class='context'>  end</pre>
@@ -367,9 +367,9 @@ p {
     <td>HostController</td>
     <td>restore_backup</td>
     <td>File Access</td>
-    <td><div class='warning_message' onClick="toggle('context3');toggle('message3');toggle('full_message3')" ><span id='message3' style='display:block' >Parameter value used in file name near line 93: FileUtils.remove_file(File.join(&quot;#{::Rails.root.to_s}...</span><span id='full_message3' style='display:none'>Parameter value used in file name near line 93: FileUtils.remove_file(File.join(&quot;#{::Rails.root.to_s}/public/uploaded_files/&quot;, <span class="user_input">params[:file].original_filename</span>), (force = true))</span><table id='context3' class='context' style='display:none'><caption>/app/controllers/host_controller.rb</caption>        <tr class='context first'>
+    <td><div class='warning_message' onClick="toggle('context3');toggle('message3');toggle('full_message3')" ><span id='message3' style='display:block' >Parameter value used in file name near line 94: FileUtils.remove_file(File.join(&quot;#{::Rails.root.to_s}...</span><span id='full_message3' style='display:none'>Parameter value used in file name near line 94: FileUtils.remove_file(File.join(&quot;#{::Rails.root.to_s}/public/uploaded_files/&quot;, <span class="user_input">params[:file].original_filename</span>), (force = true))</span><table id='context3' class='context' style='display:none'><caption>/app/controllers/host_controller.rb</caption>        <tr class='context first'>
           <td class='context_line'>
-            <pre class='context'>88</pre>
+            <pre class='context'>89</pre>
           </td>
           <td class='context'>
             <pre class='context'>  def restore_backup</pre>
@@ -377,7 +377,7 @@ p {
         </tr>
           <tr class='context alt'>
             <td class='context_line'>
-              <pre class='context'>89</pre>
+              <pre class='context'>90</pre>
             </td>
             <td class='context'>
               <pre class='context'>    tmp=params[:file].tempfile</pre>
@@ -385,7 +385,7 @@ p {
           </tr>
           <tr class='context'>
             <td class='context_line'>
-              <pre class='context'>90</pre>
+              <pre class='context'>91</pre>
             </td>
             <td class='context'>
               <pre class='context'>    file=File.join(&quot;#{::Rails.root.to_s}/public/uploaded_files/&quot;,params[:file].original_filename)</pre>
@@ -393,7 +393,7 @@ p {
           </tr>
           <tr class='context alt'>
             <td class='context_line'>
-              <pre class='context'>91</pre>
+              <pre class='context'>92</pre>
             </td>
             <td class='context'>
               <pre class='context'>    FileUtils.cp tmp.path, file</pre>
@@ -401,7 +401,7 @@ p {
           </tr>
           <tr class='context near_error'>
             <td class='context_line'>
-              <pre class='context'>92</pre>
+              <pre class='context'>93</pre>
             </td>
             <td class='context'>
               <pre class='context'>    Host.restore_db file</pre>
@@ -409,7 +409,7 @@ p {
           </tr>
           <tr class='context alt error'>
             <td class='context_line'>
-              <pre class='context'>93</pre>
+              <pre class='context'>94</pre>
             </td>
             <td class='context'>
               <pre class='context'>    FileUtils.remove_file(file, force=true)</pre>
@@ -417,7 +417,7 @@ p {
           </tr>
           <tr class='context near_error'>
             <td class='context_line'>
-              <pre class='context'>94</pre>
+              <pre class='context'>95</pre>
             </td>
             <td class='context'>
               <pre class='context'>    redirect_to :action=&gt;'index'</pre>
@@ -425,7 +425,7 @@ p {
           </tr>
           <tr class='context alt'>
             <td class='context_line'>
-              <pre class='context'>95</pre>
+              <pre class='context'>96</pre>
             </td>
             <td class='context'>
               <pre class='context'>  end</pre>
@@ -433,7 +433,7 @@ p {
           </tr>
           <tr class='context'>
             <td class='context_line'>
-              <pre class='context'>97</pre>
+              <pre class='context'>98</pre>
             </td>
             <td class='context'>
               <pre class='context'>  def destroy</pre>
@@ -441,7 +441,7 @@ p {
           </tr>
           <tr class='context alt'>
             <td class='context_line'>
-              <pre class='context'>98</pre>
+              <pre class='context'>99</pre>
             </td>
             <td class='context'>
               <pre class='context'>    @host=Host.find(params[:id])</pre>
@@ -543,7 +543,7 @@ p {
     <td>HostController</td>
     <td>download</td>
     <td>File Access</td>
-    <td><div class='warning_message' onClick="toggle('context5');toggle('message5');toggle('full_message5')" ><span id='message5' style='display:block' >User input value used in file name near line 81: send_file(<span class="user_input">Host.find(params[:id])</span>.pdf.path, :filename...</span><span id='full_message5' style='display:none'>User input value used in file name near line 81: send_file(<span class="user_input">Host.find(params[:id])</span>.pdf.path, :filename =&gt; (<span class="user_input">Host.find(params[:id])</span>.pdf_file_name), :type =&gt; (<span class="user_input">Host.find(params[:id])</span>.pdf_content_type), :disposition =&gt; &quot;attachment&quot;)</span><table id='context5' class='context' style='display:none'><caption>/app/controllers/host_controller.rb</caption>        <tr class='context first'>
+    <td><div class='warning_message' onClick="toggle('context5');toggle('message5');toggle('full_message5')" ><span id='message5' style='display:block' >User input value used in file name near line 81: send_file(<span class="user_input">Host.find(params[:id]).pdf_file_name</span>, :dis...</span><span id='full_message5' style='display:none'>User input value used in file name near line 81: send_file(<span class="user_input">Host.find(params[:id]).pdf_file_name</span>, :disposition =&gt; &quot;attachment&quot;)</span><table id='context5' class='context' style='display:none'><caption>/app/controllers/host_controller.rb</caption>        <tr class='context first'>
           <td class='context_line'>
             <pre class='context'>76</pre>
           </td>
@@ -572,7 +572,7 @@ p {
               <pre class='context'>81</pre>
             </td>
             <td class='context'>
-              <pre class='context'>   send_file dwnl.pdf.path,</pre>
+              <pre class='context'>    send_file dwnl.pdf_file_name, :disposition=&gt; 'attachment'</pre>
             </td>
           </tr>
           <tr class='context near_error'>
@@ -580,7 +580,7 @@ p {
               <pre class='context'>82</pre>
             </td>
             <td class='context'>
-              <pre class='context'>         :filename=&gt;dwnl.pdf_file_name,</pre>
+              <pre class='context'>   #send_file #dwnl.pdf.path,</pre>
             </td>
           </tr>
           <tr class='context alt'>
@@ -588,7 +588,7 @@ p {
               <pre class='context'>83</pre>
             </td>
             <td class='context'>
-              <pre class='context'>         :type=&gt;dwnl.pdf_content_type,</pre>
+              <pre class='context'>         #:filename=&gt;dwnl.pdf_file_name,</pre>
             </td>
           </tr>
           <tr class='context'>
@@ -596,7 +596,7 @@ p {
               <pre class='context'>84</pre>
             </td>
             <td class='context'>
-              <pre class='context'>         :disposition=&gt;'attachment'</pre>
+              <pre class='context'>         #:type=&gt;dwnl.pdf_content_type,</pre>
             </td>
           </tr>
           <tr class='context alt'>
@@ -604,7 +604,7 @@ p {
               <pre class='context'>85</pre>
             </td>
             <td class='context'>
-              <pre class='context'> flash[:notice]='your file has been downloaded'</pre>
+              <pre class='context'>         #:disposition=&gt;'attachment'</pre>
             </td>
           </tr>
           <tr class='context'>
@@ -612,7 +612,7 @@ p {
               <pre class='context'>86</pre>
             </td>
             <td class='context'>
-              <pre class='context'> end</pre>
+              <pre class='context'> flash[:notice]='your file has been downloaded'</pre>
             </td>
           </tr>
 </table></div></td>

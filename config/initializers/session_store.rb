@@ -1,4 +1,4 @@
-# Be sure to restart your server when you modify this file.
+# Be sure to restart your server when you modify this files.
 
 SpaceAccess::Application.config.session_store :cookie_store, key: '_space_access_session'
 

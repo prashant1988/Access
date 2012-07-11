@@ -1,4 +1,4 @@
-<h1>new</h1>
+<h1>Please fill details</h1>
 
 <center>
   <%= form_for :host,:url=>{:action=>'create'},:html=>{:multipart=>'true'}  do |acs| %>
@@ -8,3 +8,6 @@
       <%= acs.submit "create_record"%>
    <%end%>
 </center>
+  <h1><%= link_to 'Index', host_index_path%></h1>
+  <br/><br/><br/><br/><br/>
+

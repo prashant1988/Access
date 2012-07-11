@@ -1,54 +1,71 @@
 <h1>show</h1>
 
-<center>
+<table align="center">
+   <tr>
+  <th>Created_on:</th>
+  <td><%=@host.created_on %>
+  </td></tr>
+  <tr>
+  <th>Expire_on</th>
+  <td><%=@host.expire_on %>  </td>
+  </tr>
+  <tr>
+  <th>User_type:</th>
+  <td> <%=@host.user_type%></td></tr>
 
-  <b>Created_on:</b>
-  <%=@host.created_on %>
-  <br/>
+  <tr><th>Name_of_client:</th>
+  <td><%=@host.client%></td>
+  </tr>
+  <tr>
+  <th>Place:</th>
+  <td><%=@host.place%></td> </tr>
+  <tr>
+  <th>Email:</th>
+   <td><%=@host.email%></td> </tr>
+  <tr>
+  <th>Access_user:</th>
+  <td><%=@host.access_url%></td>
+  </tr>
+  <tr>
+  <th>Ftp_host:</th>
+  <td> <%=@host.ftp_host%></td>
+  </tr>
+  <tr>
+  <th>Ftp_user:</th>
+  <td><%=@host.ftp_user%></td>
+  </tr>
+  <tr>
+  <th>Ftp_password:</th>
+  <td><%=@host.ftp_password%></td>
+  </tr>
+  <tr>
+  <th>Ftp_quote[MB]:</th>
+  <td><%= @host.ftp_quote%> </td>
+  </tr>
+  
+  <tr>
+  <th>Db_host:</th>
+  <td><%=@host.db_host%></td>
+  </tr>
+  
+  <tr>
+  <th>Db_name:</th>
+  <td><%=@host.db_name%></td>
+   </tr>
+  
+  <tr> <th>
+  <b>Db_password:</b>  </th>
+  <td><%=@host.db_password%></td></tr>
+  <tr> <th>
+  <b>Db_User:</b></th>
+  <td><%=@host.db_user%> </td>
+   <div class="field"   id="testing     ">
+  <tr><th>
+  <b>Pdf:</b></th>
+  <td><%=link_to @host.pdf_file_name ,download_host_index_path(:id=>@host.id) %> </td>
+  <td><%= progress_bar(83, :color => 'blue', :rounded => true) %></td>
+  </tr>
+     </div>
+</table>
 
-  <b>Expire_on</b>
-  <%=@host.expire_on %>  <br/>
-  <br/>
-
-  <b>User_type:</b>
-  <%=@host.user_type%>
-  <br/>
-  <b>Name_of_client:</b>
-  <%=@host.client%>         <br/>
-
-  <br/>
-  <b>Place:</b>
-  <%=@host.place%>           <br/>
-  <b>Email:</b>
-  <%=@host.email%>         <br/>
-  <br/>
-
-  <b>Access_user:</b>
-  <%=@host.access_url%>     <br/>
-  <b>Ftp_host:</b>
-  <%=@host.ftp_host%>        <br/>
-  <br/>
-
-  <b>Ftp_user:</b>
-  <%=@host.ftp_user%>         <br/>
-  <b>Ftp_password:</b>
-  <%=@host.ftp_password%>     <br/>
-  <br/>
-  <b>Ftp_quote[MB]:</b>
-  <%= @host.ftp_quote%>        <br/>
-  <b>Db_host:</b>
-  <%=@host.db_host%>            <br/>
-  <b>Db_name:</b>
-  <%=@host.db_name%>          <br/>
-  <br/>
-
-  <b>Db_password:</b>
-  <%=@host.db_password%>         <br/>
-  <b>Db_User:</b>
-  <%=@host.db_user%>            <br/>
-  <br/>
-  <b>Pdf:</b>
-  <%=link_to @host.pdf_file_name ,download_host_index_path(:id=>@host.id) %>
-
-
-</center>
+<%= link_to 'Index', host_index_path%>

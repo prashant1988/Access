@@ -7,8 +7,8 @@ class Host < ActiveRecord::Base
 
 
 
-   #validates :created_on,:expire_on,:user_type,:client,:place,:email,:access_url,:ftp_host,:ftp_user,:ftp_password,
-           #  :ftp_quote,:db_name,:db_host,:db_password,:db_user,:pdf_file_name , :presence=>'true'
+   validates :created_on,:expire_on,:user_type,:client,:place,:email,:access_url,:ftp_host,:ftp_user,:ftp_password,
+             :ftp_quote,:db_name,:db_host,:db_password,:db_user,:pdf_file_name , :presence=>'true'
   validate :validate_dates
 
 

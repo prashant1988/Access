@@ -71,8 +71,13 @@
            <td><%=acs.text_field:db_password%>
            <%= button_tag "Generate", :type=>'button',:onclick=>"pswd1()"%></td>
 
+         <div class="field" id="testing">
            <th>Pdf:</th>
+           <td><%=javascript_include_tag"progress_bar/jsProgressBarHandler.js"%>
+            </td>
+          <td><%#=custom_static_progress_bar("a2?",1.0,{:show_text=>"Test",:animate=>true,:width=>120,:height=>12})%></td>
            <td><%= acs.file_field:pdf%></td>
+         </div>
      </tr>
 
 
@@ -80,3 +85,7 @@
 <br/>
 <%#= acs.submit  "create"%>
 
+<!--<div class="field" id="testing">-->
+  <!--<%#= progress_bar(33, :rounded => true) %>-->
+  <!--<%#= f.file_field :file %>-->
+<!--</div>-->
